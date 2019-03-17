@@ -12,15 +12,26 @@ namespace Shop.API.Data
             _context = context;
         }
 
-        public Task<User> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
-            throw new System.NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+
+            if(user == null)
+                return null;
+
+            return user;
         }
 
-        public Task<User> Register(User user, string password)
+       
+        public async Task<User> Register(User user, string password)
         {
-            throw new System.NotImplementedException();
+          
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
+
+        
 
         public Task<bool> UserExists(string username)
         {
