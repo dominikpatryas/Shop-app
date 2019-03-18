@@ -18,12 +18,12 @@
       </ul>
     </div>
   </div>
-  <form class="form-inline" (ngSubmit)="login()">
+  <form class="form-inline" #loginForm="ngForm" (ngSubmit)="login()">
       <div class="form-group mx-sm-3">
-          <input type="text" class="form-control" placeholder="Login">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="text" class="form-control mr-sm-2" placeholder="Username" name="username" required [(ngModel)]="model.username">
+          <input type="password" class="form-control mr-sm-2" placeholder="Password" name="password" required [(ngModel)]="model.password">
       </div>
-      <button  type="submit" class="btn btn-primary mb-2" type="submit">Log in</button>
+      <button class="btn btn-primary mb-2" type="submit">Log in</button>
     </form>
   </div>
 

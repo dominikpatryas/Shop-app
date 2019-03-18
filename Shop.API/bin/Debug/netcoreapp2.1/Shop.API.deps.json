@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "e071b1a7c9d575b1b3d9ba6c9a1be1d9c6701ca2"
+    "signature": "98315d38c859a5ee8027a53722a442fd38219ae2"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Shop.API/1.0.0": {
         "dependencies": {
+          "AlertifyJS": "1.11.2",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0"
@@ -35,6 +36,7 @@
           "Shop.API.dll": {}
         }
       },
+      "AlertifyJS/1.11.2": {},
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
       "Microsoft.NETCore.App/2.1.0": {
         "dependencies": {
@@ -3154,6 +3156,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AlertifyJS/1.11.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WdWDtnKjNIc9wZ5Y/pBpcZ5tcS/xkMpvzhx2Iom9SSMTRRdL6aCQ1Pph59EfplV1uzG/QIReBt+FDOSm52R0bg==",
+      "path": "alertifyjs/1.11.2",
+      "hashPath": "alertifyjs.1.11.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
