@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
+import { RegisterComponent } from './register/register.component';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -19,19 +20,21 @@ export function tokenGetter() {        // for automatic sending token
 @NgModule({
    declarations: [
       AppComponent,
-      NavComponent
+      NavComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
             whitelistedDomains: ['localhost:5000'],
             blacklistedRoutes: ['localhost:5000/api/auth']
          }
-      })
+      })   // interceptor
    ],
    providers: [
       AlertifyService,

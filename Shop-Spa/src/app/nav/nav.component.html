@@ -15,10 +15,31 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Women</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">LOGUOUT</a>
+        </li>
       </ul>
     </div>
   </div>
-  <form class="form-inline" #loginForm="ngForm" (ngSubmit)="login()">
+
+  <div *ngIf="logginIn()" class="btn-group">
+    <button type="button" class="btn btn-danger">Action</button>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+
+
+
+
+  <form *ngIf="!logginIn()" class="form-inline" #loginForm="ngForm" (ngSubmit)="login()">
       <div class="form-group mx-sm-3">
           <input type="text" class="form-control mr-sm-2" placeholder="Username" name="username" required [(ngModel)]="model.username">
           <input type="password" class="form-control mr-sm-2" placeholder="Password" name="password" required [(ngModel)]="model.password">
