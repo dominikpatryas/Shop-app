@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using AutoMapper;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -37,7 +38,7 @@ namespace Shop.API
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
-            
+            services.AddAutoMapper();
             services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer( options => {
@@ -81,6 +82,7 @@ namespace Shop.API
             // app.UseHttpsRedirection();
              app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
             app.UseAuthentication();
+            
             app.UseMvc();
         }
     }

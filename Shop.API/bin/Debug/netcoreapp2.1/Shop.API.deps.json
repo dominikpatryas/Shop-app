@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "98315d38c859a5ee8027a53722a442fd38219ae2"
+    "signature": "b97a17e3bf58c896eeb482672523458a398fea86"
   },
   "compilationOptions": {
     "defines": [
@@ -25,8 +25,8 @@
       "Shop.API/1.0.0": {
         "dependencies": {
           "AlertifyJS": "1.11.2",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "4.0.1",
           "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0"
         },
         "runtime": {
@@ -37,7 +37,35 @@
         }
       },
       "AlertifyJS/1.11.2": {},
-      "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
+      "AutoMapper/7.0.1": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {
+            "assemblyVersion": "7.0.1.0",
+            "fileVersion": "7.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/4.0.1": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "4.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.1.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.1.0",
@@ -209,6 +237,7 @@
           "Microsoft.NETCore.Platforms": "2.1.0"
         }
       },
+      "System.ValueTuple/4.5.0": {},
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
@@ -325,7 +354,7 @@
           "Microsoft.AspNetCore.NodeServices": "2.1.1",
           "Microsoft.AspNetCore.Owin": "2.1.1",
           "Microsoft.AspNetCore.Razor": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
+          "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.AspNetCore.Razor.Language": "2.1.1",
           "Microsoft.AspNetCore.Razor.Runtime": "2.1.1",
           "Microsoft.AspNetCore.ResponseCaching": "2.1.1",
@@ -911,7 +940,7 @@
           "Microsoft.AspNetCore.Mvc.RazorPages": "2.1.1",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.1.1",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
+          "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
         },
@@ -1114,6 +1143,9 @@
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.dll": {}
         },
+        "compileOnly": true
+      },
+      "Microsoft.AspNetCore.Razor.Design/2.1.1": {
         "compileOnly": true
       },
       "Microsoft.AspNetCore.Razor.Language/2.1.1": {
@@ -1452,7 +1484,7 @@
           "System.Threading.Tasks": "4.3.0",
           "System.Threading.Tasks.Parallel": "4.3.0",
           "System.Threading.Thread": "4.3.0",
-          "System.ValueTuple": "4.3.0",
+          "System.ValueTuple": "4.5.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath.XDocument": "4.3.0",
@@ -3039,14 +3071,6 @@
         },
         "compileOnly": true
       },
-      "System.ValueTuple/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        },
-        "compileOnly": true
-      },
       "System.Xml.ReaderWriter/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3164,12 +3188,19 @@
       "path": "alertifyjs/1.11.2",
       "hashPath": "alertifyjs.1.11.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Razor.Design/2.1.2": {
+    "AutoMapper/7.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
-      "path": "microsoft.aspnetcore.razor.design/2.1.2",
-      "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
+      "sha512": "sha512-1qKMJ1WPs42VkgeQ5iXRDWf46+iUqYM/yColAvAeDQhUgQNsgzSxjMDHQc7dL2x/o0JY8TwG+obR7vbvgh+Y3g==",
+      "path": "automapper/7.0.1",
+      "hashPath": "automapper.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0hUKTfWl/m3Cqix5hdhwq5pPu+GGLO3me95gZtf8h9kOJZBJ2wSJhcbSfZ+jT6r9UtQ6EFhTTC5LgSeo5cCjhA==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/4.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.4.0.1.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",
@@ -3219,6 +3250,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
@@ -3695,6 +3733,13 @@
       "sha512": "sha512-oDxJTufrOF2Y7g+p2jU5+2xtrcsb3KX20pH/KosLW5rbsJMAqaOwprI6gJlBQCGtMCYl/MbnC45ZObPmzyI0NQ==",
       "path": "microsoft.aspnetcore.razor/2.1.1",
       "hashPath": "microsoft.aspnetcore.razor.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Razor.Design/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BOK5fckW9v7xWjpEI6bPGwkjw10OPVASZcAa8HoWJo/0Mmg4Azddj92v8noU+YgvD/6zNZ9o/RiRXXKxk5rYwQ==",
+      "path": "microsoft.aspnetcore.razor.design/2.1.1",
+      "hashPath": "microsoft.aspnetcore.razor.design.2.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/2.1.1": {
       "type": "package",
@@ -5053,13 +5098,6 @@
       "sha512": "sha512-OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
       "path": "system.threading.thread/4.3.0",
       "hashPath": "system.threading.thread.4.3.0.nupkg.sha512"
-    },
-    "System.ValueTuple/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
-      "path": "system.valuetuple/4.3.0",
-      "hashPath": "system.valuetuple.4.3.0.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",
