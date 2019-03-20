@@ -55,15 +55,15 @@
 </div> -->
 
 <div class="btn-group" dropdown>
-  <button id="button-config" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+  <button id="button-config" dropdownToggle type="button" class="btn btn-secondary mr-5"
           aria-controls="dropdown-config">
-    Zaloguj się<span class="caret"></span>
+    Zaloguj się <i class="fa fa-sign-in"></i>
   </button>
+  <div id="test">
   <ul id="dropdown-config" *dropdownMenu class="dropdown-menu"
       role="menu" aria-labelledby="button-config">
-      
       <form class="px-4 py-3">
-        <div class="form-group">
+        <div class="form-group " autoClose="outside">
           <label for="exampleDropdownFormEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
         </div>
@@ -83,6 +83,7 @@
       <button ngbDropdownItem>New around here? Sign up</button>
       <button ngbDropdownItem>Forgot password?</button>
   </ul>
+</div>
 </div>
 
     <!-- <form *ngIf="!logginIn()" class="form-inline" #loginForm="ngForm" (ngSubmit)="login()">
