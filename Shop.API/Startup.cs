@@ -37,6 +37,9 @@ namespace Shop.API
         {
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // .AddJsonOptions(opt => {                                                //
+            //         opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            //     });
             services.AddCors();
             services.AddAutoMapper();
             services.AddScoped<IAuthRepository,AuthRepository>();
@@ -56,15 +59,15 @@ namespace Shop.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            else 
             {
-                 app.UseExceptionHandler( builder => {
+                app.UseExceptionHandler( builder => {
                     builder.Run(async context => {
                         context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
 
@@ -76,13 +79,11 @@ namespace Shop.API
                         }
                     });
                 });
-                // app.UseHsts();
+              //  app.UseHsts();
             }
 
-            // app.UseHttpsRedirection();
-             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
             app.UseAuthentication();
-            
             app.UseMvc();
         }
     }

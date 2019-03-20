@@ -1,5 +1,11 @@
-.dropdown-menu-right { padding-left:30% ; }
-#test {
-    margin-right: 150px;
+.form-group {
+    width: 300px;
 }
-
+img {
+    max-height: 50px;
+    border: 2px solid darkgray;
+    display: inline;
+}
+.dropdown {
+    cursor: pointer;
+}

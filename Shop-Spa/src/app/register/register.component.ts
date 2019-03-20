@@ -3,6 +3,7 @@ import { User } from '../_models/User';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
+import { BsDatepickerConfig } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-register',
@@ -14,8 +15,12 @@ user: User;
 registerForm: FormGroup;
   constructor(private authService: AuthService, private alertifyService: AlertifyService, private fb: FormBuilder) { }
 
+  bsConfig: Partial<BsDatepickerConfig>;
   ngOnInit() {
     this.createRegisterForm();
+    this.bsConfig = {
+      containerClass: 'theme-red'
+    };
   }
 
   passwordMatchValidator(g: FormGroup) {
