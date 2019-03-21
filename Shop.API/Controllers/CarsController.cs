@@ -7,11 +7,11 @@ namespace Shop.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarController : ControllerBase
+    public class CarsController : ControllerBase
     {
         private readonly ICarRepository _repo;
         private readonly IMapper _mapper;
-        public CarController(ICarRepository repo, IMapper mapper)
+        public CarsController(ICarRepository repo, IMapper mapper)
         {
             _mapper = mapper;
             _repo = repo;
