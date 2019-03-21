@@ -12,6 +12,7 @@ import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { CarService } from './_services/car.service';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -43,6 +44,7 @@ export function tokenGetter() {        // for automatic sending token
    providers: [
       AlertifyService,
       AuthService,
+      CarService
    ],
    bootstrap: [
       AppComponent

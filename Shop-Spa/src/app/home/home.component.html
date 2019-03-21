@@ -1,3 +1,7 @@
 <div class="container">
-  <h2>home works</h2>
-</div>
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-6">
+      <p *ngFor="let car of cars">{{car.brand + ' ' + car.model + ' ' + car.horsePower}}</p>
+    </div>
+  </div>
+</div> 
