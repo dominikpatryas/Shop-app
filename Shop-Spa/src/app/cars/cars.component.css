@@ -1,0 +1,28 @@
+
+
+  .card-img-wrapper {
+      overflow: hidden;
+      position: relative;
+  }
+  img {
+      width: 30rem;
+  }
+  
+  .member-icons {
+      position: absolute;
+      bottom: -30%;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      opacity: 0;
+  }
+  
+  .card-img-wrapper:hover .member-icons  {
+      bottom:0;
+      opacity: 1;
+  }
+  
+  .container-fluid {
+      background-color: brown;
+  }

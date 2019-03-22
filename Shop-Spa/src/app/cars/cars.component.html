@@ -1,3 +1,98 @@
-<p>
-  cars works!
-</p>
+<!-- <div class="container">
+    <div class="card mb-4 mt-5">
+  <div class="card-img-wrapper">
+    <div  *ngFor="let car of cars" >
+      <div class="row">
+            <div class="card-body">
+                <div  class="card  d-flex align-items-center" style="width: 25rem;">
+            <img class="card-img-top" src="{{'../../../assets/user.png'}}" alt="Card image cap">
+              <p class="card-text">{{car.brand + ' ' + car.model + ' ' + car.horsePower}}</p>
+            </div>
+
+            <div class="container">
+              hello
+            </div>
+
+          </div>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>  -->
+<div class="container-fluid">
+<div class="container">
+  <div *ngFor="let car of cars">
+
+    <div class="card">
+      <h5 class="card-header text-center">{{car.brand + ' ' + car.model}}</h5>
+
+      <div class="card-body">
+          <img class="card-img-top mr-5 pull-left" src="{{car.photoUrl}}" alt="Card image cap">
+
+        <h5 class="card-title">Pojemność silnika: {{car.engine}}L</h5>
+        <h5 class="card-title">Moc silnika: {{car.horsePower}}km</h5>
+        <h5 class="card-title">Skrzynia biegów: {{car.gear}}</h5>
+        <h5 class="card-title">Rok produkcji: {{car.year}}r</h5>
+        <h5 class="card-title">Przyspieszenie (0-100km/h): {{car.acceleration}}s</h5>
+        <h4 class="card-title">Cena za dobę bez limitu kilmetrów: {{car.price}}zł </h4>
+        
+        <a href="#" class="btn btn-primary mt-3">Zarezerwuj!</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+      <div *ngFor="let car of cars" class="col-lg-6">
+<div class="card mb-4 mt-5" >
+    <div class="card-img-wrapper">
+      <img   src="{{ '../../../assets/user.png' }}" />
+      <ul class="list-inline member-icons animate text-center">
+        <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-user"></i></button></li>
+        <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-heart"></i></button></li>
+        <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-envelope"></i></button></li>
+  
+      </ul>
+    </div>
+    <h6 class="card-body text-center mb-1"><i class="fa fa-user"> {{car.brand}}</i>
+    </h6>
+    <p class="card-text text-muted text-center">{{car.model}}</p>
+  </div> 
+
+
+</div>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let car of cars">
+      <div class="card">
+        <div class="card-body">
+          <img
+            class="card-img-top"
+            style="width: 10rem;"
+            src="{{ '../../../assets/user.png' }}"
+            alt="Card image cap"
+          />
+          <h5 class="card-title">{{car.brand + ' ' + car.model}}</h5>
+          <p class="card-text">
+              Silnik: {{car.engine}}
+              Skrzynia: {{car.gear}}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

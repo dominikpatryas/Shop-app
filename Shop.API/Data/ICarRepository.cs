@@ -8,5 +8,6 @@ namespace Shop.API.Data
     {
         Task<IEnumerable<Car>> GetCars();
         Task<Car> GetCar(int id);
+        Task<Photo> GetPhoto(int id);
     }
 }

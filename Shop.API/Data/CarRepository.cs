@@ -13,16 +13,23 @@ namespace Shop.API.Data
             _context = context;
         }
 
+        public async Task<Photo> GetPhoto(int id)
+        {
+            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
+
+            return photo;
+        }
+
         public async Task<Car> GetCar(int id)
         {
-            var car = await _context.Cars.FirstOrDefaultAsync(z => z.Id == id);
+            var car = await _context.Cars.Include(x => x.Photos).FirstOrDefaultAsync(z => z.Id == id);
 
             return car;
         }
 
         public async Task<IEnumerable<Car>> GetCars()
         {
-            var cars = await _context.Cars.ToListAsync();
+            var cars = await _context.Cars.Include(x => x.Photos).ToListAsync();
 
             return cars;
         }

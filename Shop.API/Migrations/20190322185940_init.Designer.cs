@@ -10,8 +10,8 @@ using Shop.API.Data;
 namespace Shop.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190321133027_CarPhoto")]
-    partial class CarPhoto
+    [Migration("20190322185940_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

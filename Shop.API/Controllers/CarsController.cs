@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Shop.API.Data;
+using Shop.API.Dtos;
 
 namespace Shop.API.Controllers
 {
@@ -29,7 +31,9 @@ namespace Shop.API.Controllers
     {
         var cars = await _repo.GetCars();
 
-        return Ok(cars);
+        var carsToReturn = _mapper.Map<IEnumerable<CarForListsDto>>(cars);
+
+        return Ok(carsToReturn);
     }
 
     }

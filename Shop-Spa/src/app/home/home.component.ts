@@ -8,22 +8,10 @@ import { CarService } from '../_services/car.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  cars: Car[];
 
-  constructor(private carService: CarService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.loadCars();
   }
 
-  loadCars() {
-    this.carService.getCars().subscribe( (cars: Car[]) => {
-      console.log('fajnie');
-      this.cars = cars;
-      console.log(this.cars);
-
-    }, error => {
-      console.log(error);
-    });
-  }
 }
