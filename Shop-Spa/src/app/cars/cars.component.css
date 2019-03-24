@@ -6,6 +6,7 @@
   }
   img {
       width: 30rem;
+      min-height: 18rem;
   }
   
   .member-icons {

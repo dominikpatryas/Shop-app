@@ -18,6 +18,8 @@ import { appRoutes } from 'routes';
 import { CarsComponent } from './cars/cars.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { CarReservationComponent } from './car-reservation/car-reservation.component';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -32,7 +34,9 @@ export function tokenGetter() {        // for automatic sending token
       HomeComponent,
       CarsComponent,
       AboutComponent,
-      ContactComponent
+      ContactComponent,
+      FooterComponent,
+      CarReservationComponent
    ],
    imports: [
       BrowserModule,
@@ -48,7 +52,7 @@ export function tokenGetter() {        // for automatic sending token
             whitelistedDomains: ['localhost:5000'],
             blacklistedRoutes: ['localhost:5000/api/auth']
          }
-      })
+      })   // interceptor
    ],
    providers: [
       AlertifyService,
@@ -60,3 +64,14 @@ export function tokenGetter() {        // for automatic sending token
    ]
 })
 export class AppModule { }
+
+
+
+// JwtModule.forRoot({
+//    config: {
+//       tokenGetter: tokenGetter,
+//       whitelistedDomains: ['localhost:5000'],
+//       blacklistedRoutes: ['localhost:5000/api/auth']
+//    }
+// })   // interceptor
+// ],
