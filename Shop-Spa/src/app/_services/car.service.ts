@@ -14,4 +14,8 @@ constructor(private http: HttpClient) { }
 getCars(): Observable<Car[]> {
   return this.http.get<Car[]>(this.baseUrl + 'cars/');
 }
+
+getCar(id): Observable<Car> {
+  return this.http.get<Car>(this.baseUrl + 'cars/' + id);
+}
 }

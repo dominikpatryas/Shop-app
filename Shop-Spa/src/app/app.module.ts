@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AlertifyService } from './_services/alertify.service';
@@ -20,6 +19,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
+import { CarReservationResolver } from './_resolvers/car-reservation.resolver';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -57,7 +57,8 @@ export function tokenGetter() {        // for automatic sending token
    providers: [
       AlertifyService,
       AuthService,
-      CarService
+      CarService,
+      CarReservationResolver
    ],
    bootstrap: [
       AppComponent
