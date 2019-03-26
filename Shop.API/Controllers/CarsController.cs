@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using Shop.API.Data;
 using Shop.API.Dtos;
 
@@ -35,7 +37,8 @@ namespace Shop.API.Controllers
 
         return Ok(carsToReturn);
     }
-
+    
+        
     }
 
 }
