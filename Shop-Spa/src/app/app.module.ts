@@ -36,7 +36,7 @@ export function tokenGetter() {        // for automatic sending token
       AboutComponent,
       ContactComponent,
       FooterComponent,
-      CarReservationComponent
+      CarReservationComponent,
    ],
    imports: [
       BrowserModule,
@@ -53,7 +53,7 @@ export function tokenGetter() {        // for automatic sending token
             blacklistedRoutes: ['localhost:5000/api/auth']
          }
       })   // interceptor
-   ],
+      ],
    providers: [
       AlertifyService,
       AuthService,

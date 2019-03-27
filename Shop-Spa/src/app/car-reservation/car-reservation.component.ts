@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../_models/Car';
+import { CarService } from '../_services/car.service';
+import { AlertifyService } from '../_services/alertify.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-car-reservation',
@@ -8,11 +11,14 @@ import { Car } from '../_models/Car';
 })
 export class CarReservationComponent implements OnInit {
 
-  @Input() car: Car;
+ car: Car;
 
-  constructor() { }
+  constructor(private carService: CarService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
+    this.route.data.subscribe(data => {
+      this.car = data['car'];
+  });
 
+}
 }
