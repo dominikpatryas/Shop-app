@@ -1,14 +1,14 @@
 <div class="container"  >
     <!-- Portfolio Item Heading -->
     <h1 class="my-4" >Rezerwacja 
-      <small>{{car.brand}} {{car.model}}</small>
+      <small>{{car?.brand}} {{car?.model}}</small>
     </h1>
   
     <!-- Portfolio Item Row -->
     <div class="row">
   
       <div class="col-md-8">
-        <img class="img-fluid" src="{{car.photoUrl}}" alt="">
+        <img class="img-fluid" src="{{car?.photoUrl}}" alt="">
     </div>  
     
       <div class="col-md-4">
@@ -33,7 +33,7 @@
   
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <img class="img-fluid" src="{{car.photoUrl}}" alt="">
+              <img src="{{car?.photoUrl}}" alt="">
             </a>
       </div>
   

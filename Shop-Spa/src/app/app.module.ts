@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarReservationResolver } from './_resolvers/car-reservation.resolver';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -58,7 +59,8 @@ export function tokenGetter() {        // for automatic sending token
       AlertifyService,
       AuthService,
       CarService,
-      CarReservationResolver
+      CarReservationResolver,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent

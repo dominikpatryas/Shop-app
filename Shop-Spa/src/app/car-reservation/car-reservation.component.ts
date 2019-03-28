@@ -20,5 +20,17 @@ export class CarReservationComponent implements OnInit {
       this.car = data['car'];
   });
 
+  // ngOnInit() {
+  //   this.loadCar();
+  // }
+
+  // loadCar() {
+  //   this.carService.getCar(+this.route.snapshot.params['id']).subscribe((car: Car) => {
+  //     this.car = car;
+  //   }, error => {
+  //     this.alertify.error(error);
+  //   });
+  // }
+
 }
 }
