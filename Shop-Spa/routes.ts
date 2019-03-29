@@ -15,12 +15,13 @@ export const appRoutes: Routes = [
     runGuardsAndResolvers: 'always',
         children: [
     { path: 'flota', component: CarsComponent },
-    { path: 'flota/rezerwacja/:id', component: CarReservationComponent, resolve: {car: CarReservationResolver}, canActivate: [AuthGuard] },
+    { path: 'flota/:id', component: CarReservationComponent, canActivate: [AuthGuard], resolve: {car: CarReservationResolver} },
     { path: 'kontakt', component: ContactComponent },
     { path: 'onas', component: AboutComponent },
     { path: 'rejestracja', component: RegisterComponent },
 
-    { path: '**', redirectTo: '', pathMatch: 'full'},
         ]
-    }
+    },
+    { path: '**', redirectTo: '', pathMatch: 'full'},
+
 ];

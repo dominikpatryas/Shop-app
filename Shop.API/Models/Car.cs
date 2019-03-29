@@ -16,6 +16,7 @@ namespace Shop.API.Models
         public int Acceleration { get; set; }
         public DateTime Rent { get; set; }
         public DateTime EndRent { get; set; }
+        public bool isRent { get; set; }
         public ICollection<Photo> Photos { get; set; }
 
     }

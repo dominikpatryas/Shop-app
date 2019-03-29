@@ -7,14 +7,15 @@ import { CarService } from '../_services/car.service';
 import { Car } from '../_models/Car';
 
 @Injectable()
-export class CarReservationResolver implements Resolve<Car> {
+export class CarResolver implements Resolve<Car[]> {
   constructor(private carService: CarService, private router: Router, private alertify: AlertifyService) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<Car> {
-    return this.carService.getCar(route.params['id']).pipe(
+  resolve(route: ActivatedRouteSnapshot): Observable<Car[]> {
+    return this.carService.getCars().pipe(
         catchError(error => {
             this.alertify.error('Problem in retrieving data');
             this.router.navigate(['/home']);
+            // observable
             return of(null);
         }));
   }
