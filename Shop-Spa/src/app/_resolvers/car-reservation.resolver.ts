@@ -19,3 +19,4 @@ export class CarReservationResolver implements Resolve<Car> {
         }));
   }
 }
+

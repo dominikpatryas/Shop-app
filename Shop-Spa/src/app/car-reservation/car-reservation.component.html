@@ -31,13 +31,14 @@
   
     <div class="row">
   
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img src="{{car.photoUrl }}" alt="">
+      <div class="col-md-3 col-sm-6 mb-4" *ngFor="let cary of cars; index as i" >
+        
+        <a href="#" *ngIf="i < 4">
+              <img class="img-fluid" *ngIf="cary.id !== car.id"  src="{{cary.photoUrl}}  " alt="">
             </a>
       </div>
   
-      <div class="col-md-3 col-sm-6 mb-4">
+      <!-- <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
             </a>
@@ -53,7 +54,7 @@
         <a href="#">
               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
             </a>
-      </div>
+      </div> -->
   
     </div>
     <!-- /.row -->

@@ -7,6 +7,7 @@ import { RegisterComponent } from 'src/app/register/register.component';
 import { CarReservationComponent } from 'src/app/car-reservation/car-reservation.component';
 import { CarReservationResolver } from 'src/app/_resolvers/car-reservation.resolver';
 import { AuthGuard } from 'src/app/_guards/auth.guard';
+import { CarResolver } from 'src/app/_resolvers/car.resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent},
@@ -15,7 +16,7 @@ export const appRoutes: Routes = [
     runGuardsAndResolvers: 'always',
         children: [
     { path: 'flota', component: CarsComponent },
-    { path: 'flota/:id', component: CarReservationComponent, canActivate: [AuthGuard], resolve: {car: CarReservationResolver} },
+    { path: 'flota/:id', component: CarReservationComponent, canActivate: [AuthGuard], resolve: {cars: CarResolver} },
     { path: 'kontakt', component: ContactComponent },
     { path: 'onas', component: AboutComponent },
     { path: 'rejestracja', component: RegisterComponent },

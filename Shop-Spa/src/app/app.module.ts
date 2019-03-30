@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarReservationResolver } from './_resolvers/car-reservation.resolver';
 import { AuthGuard } from './_guards/auth.guard';
+import { CarResolver } from './_resolvers/car.resolver';
 
 
 export function tokenGetter() {        // for automatic sending token
@@ -60,6 +61,7 @@ export function tokenGetter() {        // for automatic sending token
       AuthService,
       CarService,
       CarReservationResolver,
+      CarResolver,
       AuthGuard
    ],
    bootstrap: [

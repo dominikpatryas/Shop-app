@@ -25,7 +25,8 @@ namespace Shop.API.Controllers
     {
         var car = await _repo.GetCar(id);
 
-        return Ok(car);
+        var carForReturn = _mapper.Map<CarForListsDto>(car);
+        return Ok(carForReturn);
     }
 
     [HttpGet]
