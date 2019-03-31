@@ -13,13 +13,11 @@
     
       <div class="col-md-4">
         <h3 class="my-3">Podaj termin</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+        <p>Ostatnia rezerwacja: {{car.rent | date: 'mediumDate'}}</p>
         <h3 class="my-3">Dodatkowe informacje</h3>
         <ul>
-          <li>Lorem Ipsum</li>
-          <li>Dolor Sit Amet</li>
-          <li>Consectetur</li>
-          <li>Adipiscing Elit</li>
+         <li>Wynajem bez kaucji</li>
+         <li>Do każdego najmu perfuma oraz zapach do samochodu</li>
         </ul>
       </div>
   
@@ -27,13 +25,13 @@
     <!-- /.row -->
   
     <!-- Related Projects Row -->
-    <h3 class="my-4">Inne samochodys</h3>
+    <h3 class="my-4">Inne samochody</h3>
   
     <div class="row">
   
       <div class="col-md-3 col-sm-6 mb-4" *ngFor="let cary of cars; index as i" >
         
-        <a href="#" *ngIf="i < 4">
+        <a href="#" [routerLink]="['/flota/', car.id]" routerLinkActive="router-link-active"  *ngIf="i < 4">
               <img class="img-fluid" *ngIf="cary.id !== car.id"  src="{{cary.photoUrl}}  " alt="">
             </a>
       </div>

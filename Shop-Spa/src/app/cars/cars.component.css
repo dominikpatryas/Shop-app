@@ -8,7 +8,9 @@
       width: 30rem;
       min-height: 18rem;
   }
-  
+  .border {
+      padding: 3px;
+  }
   .member-icons {
       position: absolute;
       bottom: -30%;
