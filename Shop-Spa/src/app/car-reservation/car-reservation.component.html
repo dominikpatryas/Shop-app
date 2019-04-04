@@ -1,29 +1,30 @@
 <div class="container" >
-    <!-- Portfolio Item Heading -->
     <h1 class="my-4" >Rezerwacja 
       <small>{{car?.brand}} {{car?.model}}</small>
     </h1>
-  
-    <!-- Portfolio Item Row -->
-    <div class="row">
-  
-      <div class="col-md-8" >
-        <img class="img-fluid" src="{{car.photoUrl}}" alt="">
-    </div>  
-    
-      <div class="col-md-4">
-        <h3 class="my-3">Podaj termin</h3>
-        <p>Ostatnia rezerwacja: {{car.rent | date: 'mediumDate'}}</p>
-        <h3 class="my-3">Dodatkowe informacje</h3>
-        <ul>
-         <li>Wynajem bez kaucji</li>
-         <li>Do każdego najmu perfuma oraz zapach do samochodu</li>
-        </ul>
-      </div>
-  
-    </div>
-    <!-- /.row -->
-  
+        <img class="img-fluid " src="{{car.photoUrl}}" alt="">
+      <h3 class="my-3">Podaj termin</h3>
+      <p  class="text-center">Ostatnia rezerwacja: {{car.rent | date: 'mediumDate'}}</p>
+
+          <div class="container">
+              <div class="row">
+                <div class="col">
+                    <input class="form-control"
+                    placeholder="Data wynajmu" formControlName="dateOfBirth" type="text" bsDatepicker [bsConfig]="bsConfig">
+                          <textarea name="txtMsg" class="form-control mt-3" placeholder="Opcjonalna wiadomość *" style="width: 100%; height: 150px;"></textarea>
+                    <button type="button" class="btn btn-success mt-3">Wynajmij</button>
+                </div>
+                <div class="col">
+                    <h3 class="my-3">Dodatkowe informacje</h3>
+                    <ul>
+                     <li>Wynajem bez kaucji</li>
+                     <li>Do każdego najmu perfuma oraz zapach do samochodu</li>
+                    </ul>
+                </div>
+              </div>
+
+</div>
+
     <!-- Related Projects Row -->
     <h3 class="my-4">Inne samochody</h3>
   
@@ -36,24 +37,5 @@
             </a>
       </div>
   
-      <!-- <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-      </div>
-  
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-      </div>
-  
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-      </div> -->
-  
+ 
     </div>
-    <!-- /.row -->
-  </div>

@@ -5,6 +5,7 @@ import { AlertifyService } from '../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from '../_models/Photo';
 import { stringify } from '@angular/core/src/util';
+import { BsDatepickerConfig } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-car-reservation',
@@ -15,6 +16,7 @@ export class CarReservationComponent implements OnInit {
 
  car: Car;
  cars: Car[];
+ bsConfig: Partial<BsDatepickerConfig>;
   constructor(private carService: CarService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -24,6 +26,9 @@ export class CarReservationComponent implements OnInit {
   this.route.data.subscribe(data => {
     this.cars = data['cars'];
    this.loadCar();
+   this.bsConfig = {
+    containerClass: 'theme-red'
+  };
 
 });
   // ngOnInit() {
