@@ -7,6 +7,8 @@ import { Photo } from '../_models/Photo';
 import { stringify } from '@angular/core/src/util';
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { User } from '../_models/User';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-car-reservation',
@@ -17,9 +19,10 @@ export class CarReservationComponent implements OnInit {
 
  car: Car;
  cars: Car[];
+ currentUser: User;
  bsConfig: Partial<BsDatepickerConfig>;
   constructor(private carService: CarService, private alertify: AlertifyService, private route: ActivatedRoute,
-   private fb: FormBuilder) { }
+   private fb: FormBuilder, private authService: AuthService) { }
   rentForm: FormGroup;
 
   ngOnInit() {
@@ -30,6 +33,8 @@ export class CarReservationComponent implements OnInit {
    this.bsConfig = {
     containerClass: 'theme-red'
   };
+  this.createRentForm();
+  console.log(this.authService.dekodedToken.nameid);
 
 });
 
@@ -45,15 +50,16 @@ export class CarReservationComponent implements OnInit {
 
   createRentForm() {
     this.rentForm = this.fb.group({
-      rentDate: [''],
-      message: ['']
+      // rentDate: [''],
+      messagerent: ['']
     });
   }
 
   rentCar() {
+    this.car = Object.assign({}, this.rentForm.value);
+    this.car.isrent = false;
+
     this.carService.rentCar(1, this.car).subscribe(rent =>  {
-      this.car.isrent = true;
-      console.log(this.car);
       this.alertify.success('succesfully rented a car');
     }, error => {
       this.alertify.error(error);

@@ -15,5 +15,7 @@ export class Car {
     isrent: boolean;
     photos?: Photo[];
     photoUrl: string;
+    userid: number;
+    messagerent: string;
 
 }

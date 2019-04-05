@@ -14,6 +14,8 @@ namespace Shop.API.Models
         public int Year { get; set; }
         public int Price { get; set; }
         public int Acceleration { get; set; }
+        public int UserId { get; set; }
+        public string MessageRent { get; set; }
         public DateTime Rent { get; set; }
         public DateTime EndRent { get; set; }
         public bool isRent { get; set; }
