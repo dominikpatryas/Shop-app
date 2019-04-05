@@ -33,5 +33,10 @@ namespace Shop.API.Data
 
             return cars;
         }
+
+         public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
     }
 }

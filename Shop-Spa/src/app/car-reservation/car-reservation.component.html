@@ -9,10 +9,20 @@
           <div class="container">
               <div class="row">
                 <div class="col">
-                    <input class="form-control"
-                    placeholder="Data wynajmu" formControlName="dateOfBirth" type="text" bsDatepicker [bsConfig]="bsConfig">
-                          <textarea name="txtMsg" class="form-control mt-3" placeholder="Opcjonalna wiadomość *" style="width: 100%; height: 150px;"></textarea>
+                  <form [formGroup]="rentForm" (ngSubmit) = "rentCar()">
+
+                      <div class="form-group">
+                          <input [ngClass]="{}" class="form-control" bsDatepicker [bsConfig]="bsConfig"
+                            placeholder="Data" formControlName="rentDate">
+                        </div>
+
+                        <div class="form-group">
+                            <input [ngClass]="{}" class="form-control"
+                              placeholder="Opcjonalna wiadomość *" formControlName="message">
+                          </div>
+                    
                     <button type="button" class="btn btn-success mt-3">Wynajmij</button>
+                  </form>
                 </div>
                 <div class="col">
                     <h3 class="my-3">Dodatkowe informacje</h3>
@@ -24,8 +34,7 @@
               </div>
 
 </div>
-
-    <!-- Related Projects Row -->
+<hr class="half-rule" />
     <h3 class="my-4">Inne samochody</h3>
   
     <div class="row">

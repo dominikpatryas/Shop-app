@@ -11,6 +11,8 @@ export class Car {
     price: number;
     acceleration: number;
     rent: Date;
+    endrent: Date;
+    isrent: boolean;
     photos?: Photo[];
     photoUrl: string;
 

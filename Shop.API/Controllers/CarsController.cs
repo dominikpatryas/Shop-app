@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using Shop.API.Data;
 using Shop.API.Dtos;
+using Shop.API.Models;
 
 namespace Shop.API.Controllers
 {
@@ -38,7 +40,19 @@ namespace Shop.API.Controllers
 
         return Ok(carsToReturn);
     }
-    
+     [HttpPut("{id}")]
+     public async Task<IActionResult> RentCar(int id, CarForRent carForRent)
+     {
+         var carFromRepo = await _repo.GetCar(id);
+
+        _mapper.Map(carForRent, carFromRepo);
+
+         if (await _repo.SaveAll())
+            return NoContent();
+
+        throw new Exception($"Updating car {id} failed on save");
+
+     }
         
     }
 

@@ -12,6 +12,7 @@ namespace Shop.API.Helpers
             CreateMap<Car,CarForListsDto>().ForMember(dest => dest.PhotoUrl, opt => {
                         opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
                     });
+            CreateMap<CarForRent, Car>();
         }
     }
 }

@@ -18,4 +18,8 @@ getCars(): Observable<Car[]> {
 getCar(id): Observable<Car> {
   return this.http.get<Car>(this.baseUrl + 'cars/' + id);
 }
+
+rentCar(id: number, car: Car) {
+  return this.http.put(this.baseUrl + 'cars/' + id, car);
+}
 }
