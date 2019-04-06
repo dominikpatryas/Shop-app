@@ -24,7 +24,8 @@ export class CarReservationComponent implements OnInit {
   constructor(private carService: CarService, private alertify: AlertifyService, private route: ActivatedRoute,
    private fb: FormBuilder, private authService: AuthService) { }
   rentForm: FormGroup;
-
+currentCarId: any;
+currentUserId: any;
   ngOnInit() {
 
   this.route.data.subscribe(data => {
@@ -34,10 +35,7 @@ export class CarReservationComponent implements OnInit {
     containerClass: 'theme-red'
   };
   this.createRentForm();
-  console.log(this.authService.dekodedToken.nameid);
-
 });
-
 }
 
   loadCar() {
@@ -50,16 +48,16 @@ export class CarReservationComponent implements OnInit {
 
   createRentForm() {
     this.rentForm = this.fb.group({
-      // rentDate: [''],
+      rent: [''],
+      endrent: [''],
       messagerent: ['']
     });
+
   }
 
   rentCar() {
     this.car = Object.assign({}, this.rentForm.value);
-    this.car.isrent = false;
-
-    this.carService.rentCar(1, this.car).subscribe(rent =>  {
+    this.carService.rentCar(this.authService.dekodedToken.nameid, this.car).subscribe(rent =>  {
       this.alertify.success('succesfully rented a car');
     }, error => {
       this.alertify.error(error);

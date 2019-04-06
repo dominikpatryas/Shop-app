@@ -11,10 +11,16 @@
                 <div class="col">
                   <form [formGroup]="rentForm" (ngSubmit) = "rentCar()">
 
-                      <!-- <div class="form-group">
-                          <input  class="form-control" bsDatepicker [bsConfig]="bsConfig"
-                            placeholder="Data" formControlName="rentDate">
-                        </div> -->
+                      <div class="form-group">
+                          <input  class="form-control" bsDatepicker [bsConfig]="bsConfig" type="text"
+                            placeholder="Data rozpoczęcia wynajmu" formControlName="rent">
+                        </div>
+
+                        <div class="form-group">
+                          <input  class="form-control" bsDatepicker [bsConfig]="bsConfig" type="text"
+                            placeholder="Data zakończnia wynajmu" formControlName="endrent">
+                        </div>
+
 
                         <div class="form-group">
                             <input class="form-control"

@@ -10,8 +10,8 @@ export class Car {
     year: number;
     price: number;
     acceleration: number;
-    rent: Date;
-    endrent: Date;
+    rent: number;
+    endrent: number;
     isrent: boolean;
     photos?: Photo[];
     photoUrl: string;
