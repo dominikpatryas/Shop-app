@@ -26,6 +26,7 @@ export class CarReservationComponent implements OnInit {
   rentForm: FormGroup;
 currentCarId: any;
 currentUserId: any;
+data = new Date();
   ngOnInit() {
 
   this.route.data.subscribe(data => {
@@ -41,6 +42,7 @@ currentUserId: any;
   loadCar() {
     this.carService.getCar(+this.route.snapshot.params['id']).subscribe((car: Car) => {
       this.car = car;
+      this.currentCarId = this.car.id;
     }, error => {
       this.alertify.error(error);
     });
@@ -57,7 +59,7 @@ currentUserId: any;
 
   rentCar() {
     this.car = Object.assign({}, this.rentForm.value);
-    this.carService.rentCar(this.authService.dekodedToken.nameid, this.car).subscribe(rent =>  {
+    this.carService.rentCar(this.currentCarId, this.car).subscribe(rent =>  {
       this.alertify.success('succesfully rented a car');
     }, error => {
       this.alertify.error(error);

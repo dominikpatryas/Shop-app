@@ -1,5 +1,5 @@
 .container {
-    background-color: #1fb843;
+    background-color: #dcd8d8;
     text-align: center;
     
 }
@@ -7,4 +7,10 @@
 .half-rule { 
     text-align: center;
     width: 85%;
+ }
+
+ #reservation {
+     font-style: italic;
+     font-weight: bolder;
+     color: red;
  }
