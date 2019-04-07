@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { tokenGetter } from '../app.module';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,17 +11,17 @@ import { tokenGetter } from '../app.module';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  constructor(public authService: AuthService, private alertify: AlertifyService) { }
+  constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
   ngOnInit() {
   }
 
   login() {
     this.authService.login(this.model).subscribe(next => {
-      console.log('log');
       this.alertify.success('logg successful');
     }, error => {
-      console.log(error);
       this.alertify.error(error);
+    }, () => {
+      this.router.navigate(['/flota']);
     });
   }
 
@@ -34,6 +35,8 @@ export class NavComponent implements OnInit {
      this.authService.dekodedToken = null;
     //  this.authService.currentUser = null;
      this.alertify.message('Logged out!');
+     this.router.navigate(['/home']);
+
   }
 
 }

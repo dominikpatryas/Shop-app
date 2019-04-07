@@ -28,7 +28,6 @@ currentCarId: any;
 currentUserId: any;
 data = new Date();
   ngOnInit() {
-
   this.route.data.subscribe(data => {
     this.cars = data['cars'];
    this.loadCar();
@@ -41,6 +40,7 @@ data = new Date();
 
   loadCar() {
     this.carService.getCar(+this.route.snapshot.params['id']).subscribe((car: Car) => {
+
       this.car = car;
       this.currentCarId = this.car.id;
     }, error => {
@@ -59,6 +59,8 @@ data = new Date();
 
   rentCar() {
     this.car = Object.assign({}, this.rentForm.value);
+    if (this.car.isrent = false) { console.log('false'); }
+      this.car.userid = this.authService.dekodedToken.nameid;
     this.carService.rentCar(this.currentCarId, this.car).subscribe(rent =>  {
       this.alertify.success('succesfully rented a car');
     }, error => {
