@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
@@ -45,6 +46,7 @@ export function tokenGetter() {        // for automatic sending token
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
+      NgxGalleryModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       RouterModule.forRoot(appRoutes),

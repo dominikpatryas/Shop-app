@@ -9,6 +9,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from '../_models/User';
 import { AuthService } from '../_services/auth.service';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 
 @Component({
   selector: 'app-car-reservation',
@@ -20,6 +21,8 @@ export class CarReservationComponent implements OnInit {
  car: Car;
  cars: Car[];
  currentUser: User;
+ galleryOptions: NgxGalleryOptions[];
+galleryImages: NgxGalleryImage[];
  bsConfig: Partial<BsDatepickerConfig>;
   constructor(private carService: CarService, private alertify: AlertifyService, private route: ActivatedRoute,
    private fb: FormBuilder, private authService: AuthService) { }
@@ -27,15 +30,42 @@ export class CarReservationComponent implements OnInit {
 currentCarId: any;
 currentUserId: any;
 data = new Date();
+
   ngOnInit() {
   this.route.data.subscribe(data => {
     this.cars = data['cars'];
    this.loadCar();
-   this.bsConfig = {
-    containerClass: 'theme-red'
-  };
-  this.createRentForm();
 });
+this.createRentForm();
+this.bsConfig = {
+  containerClass: 'theme-red'
+};
+this.checkDate();
+
+this.galleryOptions = [
+  {
+    width: '500px',
+    height: '500px',
+    imagePercent: 100,
+    thumbnailsColumns: 4,
+    imageAnimation: NgxGalleryAnimation.Slide,
+    preview: false
+  }
+];
+this.galleryImages = this.getImages();
+}
+
+getImages() {
+  const imageUrls = [];
+  for (let i = 0; i < this.car.photos.length; i++) {
+    imageUrls.push({
+      small: this.car.photos[i].url,
+      medium: this.car.photos[i].url,
+      big: this.car.photos[i].url,
+    });
+  }
+
+  return imageUrls;
 }
 
   loadCar() {
@@ -59,6 +89,7 @@ data = new Date();
 
   rentCar() {
     this.car = Object.assign({}, this.rentForm.value);
+    console.log(this.car.rent);
     if (this.car.isrent = false) { console.log('false'); }
       this.car.userid = this.authService.dekodedToken.nameid;
     this.carService.rentCar(this.currentCarId, this.car).subscribe(rent =>  {
@@ -66,6 +97,12 @@ data = new Date();
     }, error => {
       this.alertify.error(error);
     } );
+  }
+
+  checkDate() {
+   const day = this.data.getUTCDate();
+   const month = this.data.getUTCMonth() + 1;
+   const year = this.data.getFullYear();
   }
 
 }
