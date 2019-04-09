@@ -40,7 +40,6 @@ this.createRentForm();
 this.bsConfig = {
   containerClass: 'theme-red'
 };
-this.checkDate();
 
 this.galleryOptions = [
   {
@@ -70,7 +69,6 @@ getImages() {
 
   loadCar() {
     this.carService.getCar(+this.route.snapshot.params['id']).subscribe((car: Car) => {
-
       this.car = car;
       this.currentCarId = this.car.id;
     }, error => {
