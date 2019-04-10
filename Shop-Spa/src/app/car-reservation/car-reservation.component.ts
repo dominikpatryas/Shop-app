@@ -36,6 +36,7 @@ data = new Date();
     this.cars = data['cars'];
    this.loadCar();
 });
+console.log(this.car.photos.length);
 this.createRentForm();
 this.bsConfig = {
   containerClass: 'theme-red'
